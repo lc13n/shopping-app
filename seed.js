@@ -11,8 +11,8 @@ const Product = require('./models/Product');
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/shopping', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(() => console.log('✅ Connected to MongoDB'))
-  .catch((err) => console.error('❌ MongoDB connection failed', err));
+}).then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('MongoDB connection failed', err));
 
 const seedData = async () => {
   try {
@@ -49,10 +49,10 @@ const seedData = async () => {
     await iphone.save();
     await tshirt.save();
 
-    console.log('✅ Seed data inserted successfully!');
+    console.log('Seed data inserted successfully!');
     process.exit();
   } catch (err) {
-    console.error('❌ Error seeding data:', err);
+    console.error('Error seeding data:', err);
     process.exit(1);
   }
 };
