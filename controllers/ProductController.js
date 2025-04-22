@@ -1,4 +1,3 @@
-// controllers/ProductController.js
 const Product = require('../models/Product');
 
 exports.index = async (req, res) => {
