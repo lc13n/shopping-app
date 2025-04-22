@@ -1,8 +1,7 @@
-// routes/adminRoutes.js
 const express = require('express');
 const router = express.Router();
 const AdminController = require('../controllers/AdminController');
-const { authenticate, authorizeAdmin } = require('../middleware/authMiddleware'); // Middleware xác thực và phân quyền
+const { authenticate, authorizeAdmin } = require('../middleware/authMiddleware');
 
 router.get('/dashboard', authenticate, authorizeAdmin, AdminController.dashboard);
 router.get('/users', authenticate, authorizeAdmin, AdminController.manageUsers);
