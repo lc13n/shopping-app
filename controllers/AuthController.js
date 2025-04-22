@@ -1,4 +1,3 @@
-// controllers/AuthController.js
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -22,16 +21,13 @@ exports.login = async (req, res) => {
 };
 
 exports.logout = (req, res) => {
-    // Xử lý logout (xóa token ở client)
     res.send('Logged out');
 };
 
 exports.forgotPassword = (req, res) => {
-    // Xử lý quên mật khẩu
     res.send('Forgot password');
 };
 
 exports.resetPassword = (req, res) => {
-    // Xử lý đặt lại mật khẩu
     res.send('Reset password');
 };
