@@ -1,6 +1,5 @@
-// controllers/OrderController.js
 const Order = require('../models/Order');
-const Cart = require('../models/Cart'); // Giả sử bạn có model Cart
+const Cart = require('../models/Cart'); 
 
 exports.checkout = async (req, res) => {
     const cart = await Cart.findOne({ user: req.user.id });
@@ -12,7 +11,6 @@ exports.checkout = async (req, res) => {
     const order = new Order({ user: req.user.id, products: cart.products, total });
     await order.save();
 
-    // Xóa giỏ hàng sau khi đặt hàng
     await Cart.findOneAndDelete({ user: req.user.id });
 
     res.status(201).send('Order placed successfully');
