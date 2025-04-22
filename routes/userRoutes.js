@@ -1,8 +1,7 @@
-// routes/userRoutes.js
 const express = require('express');
 const router = express.Router();
 const UserController = require('../controllers/UserController');
-const { authenticate } = require('../middleware/authMiddleware'); // Middleware xác thực
+const { authenticate } = require('../middleware/authMiddleware'); 
 
 router.get('/profile', authenticate, UserController.profile);
 router.put('/profile', authenticate, UserController.updateProfile);
